@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView Ayat;
-    EditText ParahNum,AyatNum;
+    EditText ParahNum,AyatNum,Surahname;
     Button search;
     Button surahSearch;
     String [] quranText={
@@ -6532,5 +6532,12 @@ public class MainActivity extends AppCompatActivity {
                     Ayat.setText(quranText[ParahayatCount[pnum - 1] + (anum-1)]);
             }
         });
+        /*Surahname=findViewById(R.id.surahNameField);
+        for(int i=0;i<SurahNames.length;i++){
+            String name=Surahname.getText().toString();
+            if(name==SurahNames[i])
+                break;
+        }*/
+
     }
 }

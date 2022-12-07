@@ -9,10 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    TextView Ayat;
-    EditText ParahNum,AyatNum,Surahname;
-    Button search;
-    Button surahSearch;
+
     String [] quranText={
             "بِسۡمِ اللّٰہِ الرَّحۡمٰنِ الرَّحِیۡمِ",
                         "اَلۡحَمۡدُ لِلّٰہِ رَبِّ الۡعٰلَمِیۡنَ ۙ﴿۱﴾",
@@ -6512,6 +6509,10 @@ public class MainActivity extends AppCompatActivity {
             "Al-Falaq ",
             "Al-Nas ",
     };
+    TextView Ayat;
+    EditText ParahNum,AyatNum,Surahname;
+    Button search;
+    Button surahSearch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -6532,12 +6533,20 @@ public class MainActivity extends AppCompatActivity {
                     Ayat.setText(quranText[ParahayatCount[pnum - 1] + (anum-1)]);
             }
         });
-        /*Surahname=findViewById(R.id.surahNameField);
-        for(int i=0;i<SurahNames.length;i++){
+        Surahname=findViewById(R.id.surahNameField);
+        /*for(int i=0;i<SurahNames.length;i++){
             String name=Surahname.getText().toString();
             if(name==SurahNames[i])
                 break;
         }*/
+        surahSearch=findViewById(R.id.SurahSearch);
+        surahSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String SurahText=Surahname.getText().toString();
+                Ayat.setText(SurahText);
+            }
+        });
 
     }
 }

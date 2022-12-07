@@ -186,8 +186,12 @@
         android:layout_height="wrap_content"
         android:text="Enter Ayat Number :"
         android:textSize="12sp"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="603dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.843" />
 
     <EditText
         android:id="@+id/getAyatNumofSurah"
@@ -195,9 +199,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:textSize="12sp"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="619dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.906"
         tools:text="Blank" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

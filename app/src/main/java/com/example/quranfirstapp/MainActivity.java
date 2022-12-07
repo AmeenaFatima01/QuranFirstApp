@@ -6626,7 +6626,7 @@ public class MainActivity extends AppCompatActivity {
             6
     };
     TextView Ayat;
-    EditText ParahNum,AyatNum,Surahname;
+    EditText ParahNum,AyatNum,Surahname,SurahAyatNum;
     Button search;
     Button surahSearch;
     @Override
@@ -6637,6 +6637,7 @@ public class MainActivity extends AppCompatActivity {
         ParahNum=findViewById(R.id.parahTextfield);
         AyatNum=findViewById(R.id.ayatNumField);
         search=findViewById(R.id.SearchBtn);
+        SurahAyatNum=findViewById(R.id.getAyatNumofSurah);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -6659,13 +6660,18 @@ public class MainActivity extends AppCompatActivity {
         surahSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String SurahText=Surahname.getText().toString();
+                int count=0;
                 //Ayat.setText(SurahText);
                 for(int i=0;i<SurahNames.length;i++) {
-                    String name = Surahname.getText().toString();
-                    if (name == SurahNames[i])
+                    count = count + SurahAyatCount[i];
+                    String SurahText = Surahname.getText().toString();
+                    if (SurahText == SurahNames[i])
                         break;
                 }
+               // count=count-SurahAyatCount[i];
+                String  SurahAyatCount=SurahAyatNum.getText().toString();
+                int sanum=Integer.valueOf(SurahAyatCount);
+                Ayat.setText(quranText[count+sanum]);
             }
         });
 

@@ -2,6 +2,8 @@ package com.example.quranfirstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -6512,7 +6514,7 @@ public class MainActivity extends AppCompatActivity {
     };
     TextView Ayat;
     EditText ParahNum,AyatNum;
-    Button search;
+    Button search,commit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -6522,7 +6524,7 @@ public class MainActivity extends AppCompatActivity {
         ParahNum=findViewById(R.id.parahTextfield);
         AyatNum=findViewById(R.id.ayatNumField);
         search=findViewById(R.id.SearchBtn);
-
+        commit=findViewById(R.id.commitbtn);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -6559,6 +6561,17 @@ public class MainActivity extends AppCompatActivity {
 //                Ayat.setText(quranText[count+sanum]);
 //            }
 //        });
+        commit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goLink("https://github.com/AmeenaFatima01/QuranFirstApp/commits/main");
+            }
+        });
 
+    }
+
+    private void goLink(String s) {
+        Uri uri= Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW,uri));
     }
 }

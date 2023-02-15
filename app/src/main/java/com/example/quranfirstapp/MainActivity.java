@@ -6393,122 +6393,7 @@ public class MainActivity extends AppCompatActivity {
             5306,
             5748,
     };
-    String [] SurahNames={
-            "Al-Fatihah",
-            "Al-Baqara ",
-            "Al-i'Imran ",
-            "An-Nisaa ",
-            "Al-Maidah ",
-            "Al-An'am ",
-            "Al-A'raf ",
-            "Al-Anfal ",
-            "At-Tauba ",
-            "Yunus ",
-            "Hud ",
-            "Yusuf ",
-            "Ar-Ra'd ",
-            "Ibrahim ",
-            "Al-Hijr ",
-            "An-Nahl ",
-            "Al-Israa ",
-            "Al-Kahf ",
-            "Maryam ",
-            "Ta-ha ",
-            "Al-Anbiyaa ",
-            "Al-Hajj ",
-            "Al-Muminun ",
-            "An-Nur ",
-            "Al-Furqan ",
-            "Ash-Shu'araa ",
-            "An-Naml ",
-            "Al-Qasas ",
-            "Al-Ankabut ",
-            "Ar-Rum ",
-            "Luqman ",
-            "As-Sajda ",
-            "Al-Ahzab ",
-            "Saba ",
-            "Fatir ",
-            "Ya-Sin ",
-            "As-Saffat ",
-            "Sad ",
-            "Az-Zumar ",
-            "Al-Mu'min ",
-            "Ha-Mim ",
-            "Ash-Shura ",
-            "Az-Zukhruf ",
-            "Ad-Dukhan ",
-            "Al-Jathiya ",
-            "Al-Ahqaf ",
-            "Muhammad ",
-            "Al-Fat-h ",
-            "Al-Hujurat ",
-            "Qaf ",
-            "Az-Zariyat ",
-            "At-Tur ",
-            "An-Najm ",
-            "Al-Qamar ",
-            "Ar-Rahman ",
-            "Al-Waqi'a ",
-            "Al-Hadid ",
-            "Al-Mujadila ",
-            "Al-Hashr ",
-            "Al-Mumtahana ",
-            "As-Saff ",
-            "Al-Jumu'a ",
-            "Al-Munafiqun ",
-            "At-Tagabun ",
-            "At-Talaq ",
-            "At-Tahrim ",
-            "Al-Mulk ",
-            "Al-Qalam ",
-            "Al-Haqqa ",
-            "Al-Ma'arij ",
-            "Nuh ",
-            "Al-Jinn ",
-            "Al-Muzzammil ",
-            "Al-Muddathth ",
-            "Al-Qiyamat ",
-            "Ad-Dahr ",
-            "Al-Mursalat ",
-            "An-Nabaa ",
-            "An-Nazi'at ",
-            "Abasa ",
-            "At-Takwir ",
-            "Al-Infitar ",
-            "Al-Mutaffife ",
-            "Al-Inshiqaq ",
-            "Al-Buruj ",
-            "At-Tariq ",
-            "Al-A'la ",
-            "Al-Gashiya ",
-            "Al-Fajr ",
-            "Al-Balad ",
-            "Ash-Shams ",
-            "Al-Lail ",
-            "Adh-Dhuha ",
-            "Al-Sharh ",
-            "At-Tin ",
-            "Al-Alaq ",
-            "Al-Qadr ",
-            "Al-Baiyina ",
-            "Al-Zalzalah ",
-            "Al-Adiyat ",
-            "Al-Qari'a ",
-            "At-Takathur ",
-            "Al-Asr ",
-            "Al-Humaza ",
-            "Al-Fil ",
-            "Quraish ",
-            "Al-Ma'un ",
-            "Al-Kauthar ",
-            "Al-Kafirun ",
-            "An-Nasr ",
-            "Al-Lahab ",
-            "Al-Ikhlas ",
-            "Al-Falaq ",
-            "Al-Nas ",
-    };
+
     int [] SurahAyatCount={
             7,
             286,
@@ -6626,9 +6511,9 @@ public class MainActivity extends AppCompatActivity {
             6
     };
     TextView Ayat;
-    EditText ParahNum,AyatNum,Surahname,SurahAyatNum;
+    EditText ParahNum,AyatNum;
     Button search;
-    Button surahSearch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -6637,7 +6522,7 @@ public class MainActivity extends AppCompatActivity {
         ParahNum=findViewById(R.id.parahTextfield);
         AyatNum=findViewById(R.id.ayatNumField);
         search=findViewById(R.id.SearchBtn);
-        SurahAyatNum=findViewById(R.id.getAyatNumofSurah);
+
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -6650,30 +6535,30 @@ public class MainActivity extends AppCompatActivity {
                     Ayat.setText(quranText[ParahayatCount[pnum - 1] + (anum-1)]);
             }
         });
-        Surahname=findViewById(R.id.surahNameField);
+        //Surahname=findViewById(R.id.surahNameField);
         /*for(int i=0;i<SurahNames.length;i++){
             String name=Surahname.getText().toString();
             if(name==SurahNames[i])
                 break;
         }*/
-        surahSearch=findViewById(R.id.SurahSearch);
-        surahSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int count=0;
-                //Ayat.setText(SurahText);
-                for(int i=0;i<SurahNames.length;i++) {
-                    count = count + SurahAyatCount[i];
-                    String SurahText = Surahname.getText().toString();
-                    if (SurahText == SurahNames[i])
-                        break;
-                }
-               // count=count-SurahAyatCount[i];
-                String  SurahAyatCount=SurahAyatNum.getText().toString();
-                int sanum=Integer.valueOf(SurahAyatCount);
-                Ayat.setText(quranText[count+sanum]);
-            }
-        });
+       // surahSearch=findViewById(R.id.SurahSearch);
+//        surahSearch.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                int count=0;
+//                //Ayat.setText(SurahText);
+//                for(int i=0;i<SurahNames.length;i++) {
+//                    count = count + SurahAyatCount[i];
+//                    String SurahText = Surahname.getText().toString();
+//                    if (SurahText == SurahNames[i])
+//                        break;
+//                }
+//               // count=count-SurahAyatCount[i];
+//                String  SurahAyatCount=SurahAyatNum.getText().toString();
+//                int sanum=Integer.valueOf(SurahAyatCount);
+//                Ayat.setText(quranText[count+sanum]);
+//            }
+//        });
 
     }
 }

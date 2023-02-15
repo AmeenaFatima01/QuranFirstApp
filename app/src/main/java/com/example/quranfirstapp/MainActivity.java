@@ -3,6 +3,7 @@ package com.example.quranfirstapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -6512,7 +6513,7 @@ public class MainActivity extends AppCompatActivity {
             5,
             6
     };
-    TextView Ayat;
+    TextView Ayat,strtText;
     EditText ParahNum,AyatNum;
     Button search,commit;
 
@@ -6525,6 +6526,9 @@ public class MainActivity extends AppCompatActivity {
         AyatNum=findViewById(R.id.ayatNumField);
         search=findViewById(R.id.SearchBtn);
         commit=findViewById(R.id.commitbtn);
+       // strtText=findViewById(R.id.bismillahText);
+//        Typeface fnt=Typeface.createFromAsset(getAssets(),"fonts/Noor.ttf");
+//        Ayat.setTypeface(fnt);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -6568,6 +6572,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+       // strtText.setTypeface(fnt);
     }
 
     private void goLink(String s) {
